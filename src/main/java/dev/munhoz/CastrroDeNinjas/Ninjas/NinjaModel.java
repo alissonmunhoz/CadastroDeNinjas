@@ -1,6 +1,9 @@
-package dev.munhoz.CastrroDeNinjas;
+package dev.munhoz.CastrroDeNinjas.Ninjas;
 
+import dev.munhoz.CastrroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -12,6 +15,12 @@ public class NinjaModel {
     private String name;
     private String email;
     private int age;
+
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    private MissoesModel missoes;
+
+
 
 
     public NinjaModel() {
